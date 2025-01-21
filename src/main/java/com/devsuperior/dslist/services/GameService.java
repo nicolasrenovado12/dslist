@@ -1,3 +1,7 @@
+
+
+
+
 package com.devsuperior.dslist.services;
 
 import java.util.List;
@@ -23,10 +27,12 @@ public class GameService {
 		return result.stream().map(x -> new GameMinDTO(x)).toList();
 	}
 	
+	
+	
 	@Transactional(readOnly = true)
 	public GameDTO findById(Long id) {
 		Game result = gamerepository.findById(id).get();
-		return new GameDTO(result);
+		return new GameDTO (result);
 	}
 	
 }
